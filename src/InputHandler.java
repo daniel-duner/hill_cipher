@@ -1,5 +1,3 @@
-import com.sun.org.apache.xpath.internal.functions.WrongNumberArgsException;
-import javax.naming.SizeLimitExceededException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -16,7 +14,7 @@ public class InputHandler {
             Path realPath = Paths.get(path);
             file.getCanonicalPath();
             if((!file.exists() || file.isDirectory()) && inputFile){
-                throw new IOException();
+                Terminator.terminate("No file exists on the path: " + path);
             }
             if((!file.canRead() && inputFile) || (!file.canWrite() && !inputFile)){
                 Terminator.terminate("Could not access file on path: "+path);
@@ -37,7 +35,7 @@ public class InputHandler {
         try{
             int number = Integer.parseInt(supposedNumber);
             if(number < 0){
-                throw new NumberFormatException();
+                Terminator.terminate(supposedNumber+" is not an positive integer number");
             }
         }catch (NumberFormatException e){
             Terminator.terminate(supposedNumber+" is not an positive integer number");
