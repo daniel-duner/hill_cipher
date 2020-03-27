@@ -1,4 +1,3 @@
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.jscience.mathematics.number.LargeInteger;
 import org.jscience.mathematics.number.ModuloInteger;
 import org.jscience.mathematics.vector.DenseMatrix;
