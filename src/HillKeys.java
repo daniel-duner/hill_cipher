@@ -4,7 +4,7 @@ import org.jscience.mathematics.vector.DenseMatrix;
 
 import java.io.File;
 /*
-I dedicate this program to Jscience, they made this possible. THey have an amazing library http://jscience.org/
+I dedicate this program to Jscience, they made this possible. They have an amazing library http://jscience.org/
  */
 public class HillKeys {
     public static void main(String[] args) {

@@ -7,7 +7,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 /*
-I dedicate this program to Jscience, they made this possible. THey have an amazing library http://jscience.org/
+I dedicate this program to Jscience, they made this possible. They have an amazing library http://jscience.org/
  */
 public class HillDecipher {
     public static void main(String[] args) {
