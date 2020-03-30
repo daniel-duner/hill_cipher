@@ -3,12 +3,10 @@ import org.jscience.mathematics.number.ModuloInteger;
 import org.jscience.mathematics.vector.DenseMatrix;
 
 import java.io.File;
-
+/*
+I dedicate this program to Jscience, they made this possible. THey have an amazing library http://jscience.org/
+ */
 public class HillKeys {
-    /**
-     * Generates a random invertible matrix and
-     * @param args [radix, blocksize, outputfile]
-     */
     public static void main(String[] args) {
         InputHandler inputHandler = new InputHandler();
         MatrixHandler mh = new MatrixHandler();

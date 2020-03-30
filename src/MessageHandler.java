@@ -39,11 +39,13 @@ public class MessageHandler {
     }
 
     public List<ModuloInteger> sequenceToArray(File sequence){
+        InputHandler inputHandler = new InputHandler();
         try{
         Scanner scanner = new Scanner(sequence);
         List<ModuloInteger> numbersArray = new ArrayList<>();
         String[] messageString = scanner.nextLine().split(" ");
         for(String str : messageString){
+            inputHandler.validateInteger(str);
             numbersArray.add(ModuloInteger.valueOf(LargeInteger.valueOf(Integer.parseInt(str))));
         }
         return numbersArray;

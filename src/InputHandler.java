@@ -1,6 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,13 +9,17 @@ public class InputHandler {
     public File createFile(String path, boolean inputFile){
             File file = new File(path);
         try{
-            Path realPath = Paths.get(path);
             file.getCanonicalPath();
             if((!file.exists() || file.isDirectory()) && inputFile){
                 Terminator.terminate("No file exists on the path: " + path);
             }
-            if((!file.canRead() && inputFile) || (!file.canWrite() && !inputFile)){
-                Terminator.terminate("Could not access file on path: "+path);
+            FileWriter writer = new FileWriter(path, true);
+            if(inputFile){
+                writer.write("");
+            }
+            Scanner sc = new Scanner(file);
+            if(!sc.hasNext() && inputFile){
+                Terminator.terminate("The input file is empty");
             }
         } catch (InvalidPathException | IOException e) {
             Terminator.terminate("No file exists on the path: " + path);
@@ -46,7 +48,7 @@ public class InputHandler {
     public void argumentCheck(String[] arguments, int numberOfArguments){
         int inputLength = arguments.length;
         if (inputLength != numberOfArguments) {
-            Terminator.terminate("WrongNumberOfArguments expected: "+ 3 + " received "+ inputLength);
+            Terminator.terminate("WrongNumberOfArguments expected: "+ numberOfArguments + " received "+ inputLength);
         }
     }
 
