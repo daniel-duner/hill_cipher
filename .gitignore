@@ -16,7 +16,9 @@
 *_BASE_*.txt
 *_LOCAL_*.txt
 *_REMOTE_*.txt
-
+**/cipher.txt
+**/decrypted.txt
+**/key.txt
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
